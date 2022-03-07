@@ -28,7 +28,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/mbartos00/Weather-app
+$ git clone https://github.com/mbartos00/Blogr
 
 # Install dependencies
 $ npm install
