@@ -1,0 +1,8 @@
+@forward './components/variables.scss';
+@forward './components/global.scss';
+@forward './components/header/header.scss';
+@forward './components/main/main.scss';
+@forward './components/footer/footer.scss';
+body {
+  max-width: 100%;
+}

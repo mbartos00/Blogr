@@ -1,0 +1,36 @@
+@use 'sass:math';
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap');
+
+@function pxToRem($px) {
+  @return math.div($px, 16px) * 1rem;
+}
+
+/** Breakpoints **/
+
+$mobile: pxToRem(375px);
+$desktop: pxToRem(768px);
+
+/** Colors **/
+
+$ctaText: hsl(355, 100%, 74%);
+$ctaHoverBg: hsl(356, 100%, 66%);
+$heading: hsl(208, 49%, 24%);
+
+$text: hsl(0, 0%, 100%);
+$footerText: hsl(240, 2%, 79%);
+$bodyText: hsl(207, 13%, 34%);
+$footerBg: hsl(240, 10%, 16%);
+
+//hero gradient
+@mixin headerBg {
+  background: linear-gradient(hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+}
+//body gradient
+@mixin bodyBg($direction) {
+  background: linear-gradient($direction, hsl(237, 17%, 21%), rgb(63, 65, 100));
+}
+
+/** Fonts **/
+
+$overpass: 'Overpass', sans-serif;
+$ubuntu: 'Ubuntu', sans-serif;

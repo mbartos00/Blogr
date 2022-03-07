@@ -1,0 +1,7 @@
+@use '../variables' as *;
+@forward './middleSection';
+@forward './outsideSections';
+
+.main {
+  max-width: 100%;
+}

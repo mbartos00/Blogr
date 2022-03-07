@@ -1,0 +1,99 @@
+@use '../variables' as *;
+@forward './nav';
+@forward './menu';
+.header {
+  max-width: 100%;
+  height: auto;
+  padding: 3rem 1.5rem 3rem 1.5rem;
+  border-bottom-left-radius: 12vh;
+  background-image: url(/app/build/images/bg-pattern-intro-mobile.svg),
+    linear-gradient(to bottom, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+  background-position: 35% 35%;
+  background-size: 300%;
+  background-repeat: no-repeat;
+  position: relative;
+
+  &__hero {
+    padding: 4rem 1rem;
+    font-family: $overpass;
+    color: $text;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    &--item {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &-title {
+        font-weight: 600;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      &-subtitle {
+        font-weight: 300;
+        font-size: 1.4rem;
+      }
+
+      &.btns {
+        flex-direction: row;
+        gap: 1rem;
+      }
+      &-btn {
+        margin-top: 2rem;
+        border: solid 2px white;
+        border-radius: 100vh;
+        padding: 0.5rem 1rem;
+        &.filled {
+          background-color: $text;
+          a {
+            color: $ctaHoverBg;
+          }
+        }
+        a {
+          color: $text;
+          font-family: $ubuntu;
+          font-size: 1rem;
+          font-weight: 700;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: $desktop) {
+  .header {
+    padding-inline: clamp(1.5rem, 8vw, 10rem);
+    background-image: url(/app/build/images/bg-pattern-intro-desktop.svg),
+      linear-gradient(to right, hsl(13, 100%, 72%) 25%, hsl(353, 100%, 62%) 60%);
+    background-position: 25% 50%;
+    background-size: 220%;
+    &__hero {
+      &--item {
+        &-title {
+          font-size: clamp(2rem, 5vw, 5rem);
+        }
+        &-btn:hover {
+          cursor: pointer;
+          background-color: $text;
+          transition: all 0.2s ease-in-out;
+          a {
+            color: $ctaHoverBg;
+          }
+        }
+        &-btn.filled:hover {
+          border-color: $ctaText;
+          background-color: $ctaText;
+          a {
+            color: $text;
+          }
+        }
+      }
+    }
+  }
+}

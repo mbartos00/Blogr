@@ -1,0 +1,58 @@
+@use '../variables' as *;
+
+.footer {
+  background-color: $footerBg;
+  color: $text;
+  width: 100%;
+  font-family: $overpass;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  border-top-right-radius: 12vh;
+  &__title {
+    margin-top: 2.5rem;
+  }
+  &__section {
+    display: inherit;
+    align-items: center;
+    flex-direction: column;
+    &--title {
+      margin-bottom: 1.5rem;
+    }
+    &--menu {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      list-style: none;
+      &-item {
+        margin-bottom: 0.1rem;
+        border-bottom: 1px solid transparent;
+
+        a {
+          color: $footerText;
+          font-family: $ubuntu;
+          font-weight: 400;
+        }
+      }
+      &-item:hover {
+        border-bottom: 1px solid $footerText;
+      }
+    }
+  }
+  &__section:last-child {
+    margin-bottom: 3rem;
+  }
+}
+@media screen and (min-width: $desktop) {
+  .footer {
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 3rem 5rem;
+    gap: 7rem;
+    align-items: flex-start;
+    &__title {
+      margin-top: -0.6rem;
+    }
+  }
+}
